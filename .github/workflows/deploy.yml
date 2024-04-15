@@ -30,7 +30,9 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: echo "Mongo Username - ${{ env.MONGODB_USERNAME }}"
+        run: |
+          echo "Mongo Username - ${{ env.MONGODB_USERNAME }}"
+          echo "Mongo Username - ${{ env.PORT }}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
